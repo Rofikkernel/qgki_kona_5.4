@@ -441,38 +441,4 @@ config ARCH_SA410M
 	  If you do not wish to build a kernel that runs on this chipset,
 	  say 'N' here.
 
-menu "Xiaomi Family"
-config BOARD_XIAOMI
-	bool "Xiaomi Family"
-	help
-	  This enables support for XiaoMi Family devices.
-
-if BOARD_XIAOMI
-config BOARD_XIAOMI_SM8250
-	bool "Xiaomi SM8250 Board"
-	select ARCH_QCOM
-	select ARCH_KONA
-
-config BOARD_ALIOTH
-	bool "Alioth and AliothIN platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi Redmi K40 / POCO F3 / MI 11x.
-
-config BOARD_APOLLO
-	bool "Apollo and Apollopro platform"
-	select BOARD_XIAOMI_SM8250
-	help
-	  This enables support for Xiaomi MI 10T/Pro / Redmi K30S.
-
-config BOARD_XIAOMI_SM7250
-	bool "Xiaomi SM7250 Board"
-	select ARCH_QCOM
-	select ARCH_SM7250
-
-endif
-endmenu
-
-
-
 endmenu

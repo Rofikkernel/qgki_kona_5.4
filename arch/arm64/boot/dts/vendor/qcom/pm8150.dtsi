@@ -64,7 +64,7 @@
 			compatible = "qcom,spmi-temp-alarm";
 			reg = <0x2400 0x100>;
 			interrupts = <0x0 0x24 0x0 IRQ_TYPE_EDGE_BOTH>;
-			io-channels = <&pm8150_vadc ADC_DIE_TEMP>;
+			io-channels = <&pm8150_vadc ADC5_DIE_TEMP>;
 			io-channel-names = "thermal";
 			#thermal-sensor-cells = <0>;
 			qcom,temperature-threshold-set = <1>;
@@ -121,19 +121,19 @@
 
 			/* Channel node */
 			ref_gnd@0 {
-				reg = <ADC_REF_GND>;
+				reg = <ADC5_REF_GND>;
 				label = "ref_gnd";
 				qcom,pre-scaling = <1 1>;
 			};
 
 			vref_1p25@1 {
-				reg = <ADC_1P25VREF>;
+				reg = <ADC5_1P25VREF>;
 				label = "vref_1p25";
 				qcom,pre-scaling = <1 1>;
 			};
 
 			die_temp@2 {
-				reg = <ADC_DIE_TEMP>;
+				reg = <ADC5_DIE_TEMP>;
 				label = "die_temp";
 				qcom,pre-scaling = <1 1>;
 			};
@@ -147,8 +147,8 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			#thermal-sensor-cells = <1>;
-			io-channels = <&pm8150_vadc ADC_AMUX_THM1_PU2>,
-					<&pm8150_vadc ADC_AMUX_THM2_PU2>;
+			io-channels = <&pm8150_vadc ADC5_AMUX_THM1_100K_PU>,
+					<&pm8150_vadc ADC5_AMUX_THM2_100K_PU>;
 		};
 	};
 
